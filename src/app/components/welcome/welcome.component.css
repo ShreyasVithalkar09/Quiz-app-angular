@@ -1,0 +1,11 @@
+.background-container {
+    background-image: url("../../../assets/quiz-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.user-form{
+    width: 50%;
+}

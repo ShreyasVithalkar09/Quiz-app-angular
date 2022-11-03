@@ -1,0 +1,11 @@
+.question-background {
+    background-image: url("../../../assets/question-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.question-container{
+    width: 60%;
+}

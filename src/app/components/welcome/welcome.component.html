@@ -1,0 +1,29 @@
+<div class="background-container d-flex justify-content-center ">
+    <div class="container bg-light p-3 rounded w-50 m-auto shadow-lg bg-body">
+        <h1 class="mb-3">Angular Quiz App</h1>
+        <div class="instructions mb-3">
+            <h5>Instructions:</h5>
+        <ol>
+            <li>Total number of questions: 10.</li>
+            <li>10 points for correct answer.</li>
+        </ol>
+        </div>
+
+        <div class="user-form">
+            <form #myForm="ngForm" (ngSubmit)="startQuiz()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Enter your name</label>
+                    <input type="text" #name="ngModel" ngModel class="form-control" id="name" name="name" required>
+                  </div>
+                  <div
+                  class="alert alert-danger"
+                  role="alert"
+                  *ngIf="name.invalid && (name.dirty || name.touched)"
+                >
+                  Username is a required field
+                </div>
+                  <button [disabled]="!myForm.valid" type="button" class="btn btn-dark" routerLink="/question">Start Quiz</button>
+            </form>
+        </div>
+    </div>
+</div>

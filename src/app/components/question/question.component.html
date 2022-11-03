@@ -1,0 +1,116 @@
+<div class="question-background d-flex align-items-center">
+    <div class="container p-4 rounded bg-light question-container shadow-lg bg-body">
+        <div class="question-header  container mb-5">
+            <div class="score-board d-flex justify-content-between my-2" >
+                <div class="questions">
+                    <p>{{ currentQuestion+1 }} of 9 Questions</p>
+                </div>
+
+                <div class="username">
+                  <p>Name: {{ name }}</p>
+              </div>
+            
+        </div>
+        <hr>
+        <!-- <div class="progress mb-3">
+            <div class="progress-bar bg-info" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div> -->
+
+        <div class="question-body container  ">
+            <div class="question">
+                <h2> {{currentQuestion+1 }}. {{ questionList[currentQuestion].name }}</h2>
+            </div>
+            <div class="options">
+                <ol>
+                    
+                        <li class=" border p-2 mb-2">
+                            <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  [checked]=false
+                                  name="option"
+                                  [value]="questionList[currentQuestion].a"
+                                  (change)="onChange($event)"
+                                  id="flexRadioDefault2"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                  {{ questionList[currentQuestion].a}}
+                                </label>
+                              </div>
+                        </li>
+                        
+                        <li class=" border p-2 mb-2">
+                            <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  [checked]=false
+                                  name="option"
+                                  [value]="questionList[currentQuestion].b"
+                                  (change)="onChange($event)"
+                                  id="flexRadioDefault2"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                  {{ questionList[currentQuestion].b}}
+                                </label>
+                              </div>
+                        </li>
+
+                        <li class=" border p-2 mb-2">
+                            <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  [checked]=false
+                                  name="option"
+                                  [value]="questionList[currentQuestion].c"
+                                  (change)="onChange($event)"
+                                  id="flexRadioDefault2"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                  {{ questionList[currentQuestion].c}}
+                                </label>
+                              </div>
+                        </li>
+
+                        <li class=" border p-2 mb-2">
+                            <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  [checked]=false
+                                  name="option"
+                                  [value]="questionList[currentQuestion].d"
+                                  (change)="onChange($event)"
+                                  id="flexRadioDefault2"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                  {{ questionList[currentQuestion].d}}
+                                </label>
+                              </div>
+                        </li>
+                    
+                </ol>
+            </div>
+
+           
+        </div>
+        <div class="container navigation  py-3 d-flex justify-content-end">
+          <ng-container *ngIf="currentQuestion < questionList.length - 1">
+              <button class="btn border-dark d-flex justify-content-center" (click)="next()">
+                  <i
+                    class="fa text-dark fa-chevron-right fa-2x"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+          </ng-container>
+
+          <ng-container *ngIf="currentQuestion === questionList.length - 1">
+              <button type="button" class="btn btn-dark" routerLink="/result" routerLinkActive="router-link-active"  (click)="next()">
+                Submit
+              </button>
+            </ng-container>
+      </div>
+    </div>
+</div>
